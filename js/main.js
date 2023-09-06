@@ -331,15 +331,38 @@ function shuffleMeFisher(array) {
     j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
+
   return array;
 }
 
-console.log(shuffleMeFisher([50, 40, 34, 67, 29]));
+let theArray = [50, 40, 34, 67, 29];
 
-//GET AVERGAE AGE FROM ARRAY OF OBJECTS
-function getAverageAge(array) {
-  num = array.reduce((sum, curr) => sum + curr.age, 0) / array.length;
-  return num.toFixed(2);
+let shuffleTheArray = [];
+for (let i = 0; i < 20; i++) {
+  // console.log(shuffleMeFisher(theArray));
+  let shuffleArray = Array.from(shuffleMeFisher(theArray));
+  console.log(shuffleArray);
+  shuffleTheArray.push(shuffleArray);
 }
+console.log(shuffleTheArray);
 
-console.log(getAverageAge(users));
+
+
+// //CHECKING FOR PROBABILITY
+// function checkProbability(array, obj, key) {
+//   obj = {};
+//   for (let i = array.length - 1; i > 0; i--) {
+//     j = Math.floor(Math.random() * (i + 1));
+//     [array[i], array[j]] = [array[j], array[i]];
+//   }
+// }
+
+// //GET AVERGAE AGE FROM ARRAY OF OBJECTS
+// function getAverageAge(array) {
+//   num = array.reduce((sum, curr) => sum + curr.age, 0) / array.length;
+//   return num.toFixed(2);
+// }
+
+// console.log(getAverageAge(users));
+
+//CREATE ARRAY FROM UNIQUE ELEMENTS
