@@ -346,8 +346,6 @@ for (let i = 0; i < 20; i++) {
 }
 console.log(shuffleTheArray);
 
-
-
 // //CHECKING FOR PROBABILITY
 // function checkProbability(array, obj, key) {
 //   obj = {};
