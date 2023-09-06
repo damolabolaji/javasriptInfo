@@ -336,24 +336,29 @@ function shuffleMeFisher(array) {
 }
 
 let theArray = [50, 40, 34, 67, 29];
-
-let shuffleTheArray = [];
-for (let i = 0; i < 20; i++) {
-  // console.log(shuffleMeFisher(theArray));
-  let shuffleArray = Array.from(shuffleMeFisher(theArray));
-  console.log(shuffleArray);
-  shuffleTheArray.push(shuffleArray);
+function shuffleMe(theArray) {
+  let shuffleTheArray = [];
+  for (let i = 0; i < 2100000; i++) {
+    // console.log(shuffleMeFisher(theArray));
+    let shuffleArray = Array.from(shuffleMeFisher(theArray));
+    // console.log(shuffleArray);
+    shuffleTheArray.push(shuffleArray);
+  }
+  return shuffleTheArray;
 }
-console.log(shuffleTheArray);
+
+// console.log(shuffleMe(theArray));
 
 // //CHECKING FOR PROBABILITY
-// function checkProbability(array, obj, key) {
-//   obj = {};
-//   for (let i = array.length - 1; i > 0; i--) {
-//     j = Math.floor(Math.random() * (i + 1));
-//     [array[i], array[j]] = [array[j], array[i]];
-//   }
-// }
+let arrayInstances = shuffleMe(theArray).reduce((obj, item) => {
+  if (!obj[item]) {
+    obj[item] = 0;
+  }
+  obj[item]++;
+  return obj;
+}, {});
+
+console.log(arrayInstances);
 
 // //GET AVERGAE AGE FROM ARRAY OF OBJECTS
 // function getAverageAge(array) {
