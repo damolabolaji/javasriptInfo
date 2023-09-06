@@ -335,3 +335,10 @@ function shuffleMeFisher(array) {
 }
 
 console.log(shuffleMeFisher([50, 40, 34, 67, 29]));
+
+//GET AVERGAE AGE FROM ARRAY OF OBJECTS
+function getAverageAge(array) {
+  return array.reduce((sum, curr) => sum + curr.age, 0) / array.length;
+}
+
+console.log(getAverageAge(users));
