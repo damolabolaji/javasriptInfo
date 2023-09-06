@@ -324,3 +324,14 @@ function shuffleThis(arr) {
 }
 
 console.log(shuffleThis([50, 40, 34, 67, 29]));
+
+//Fisher-Yates Method of shuffling an array
+function shuffleMeFisher(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+console.log(shuffleMeFisher([50, 40, 34, 67, 29]));
