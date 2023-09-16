@@ -379,15 +379,25 @@ let someString = [
   "12:l0",
 ];
 function uniqueStringItems(arr) {
-  arrayObjects = arr.reduce((obj, key) => {
-    if (!obj[key]) {
-      obj[key] = 0;
+  //using Objects
+  // arrayObjects = arr.reduce((obj, key) => {
+  //   if (!obj[key]) {
+  //     obj[key] = 0;
+  //   }
+  //   obj[key]++;
+  //   return obj;
+  // }, {});
+  // objKeys = Object.keys(arrayObjects);
+  // return objKeys;
+
+  //Using Array Loops
+  uniqueArray = [];
+  for (let item of arr) {
+    if (!uniqueArray.includes(item)) {
+      uniqueArray.push(item);
     }
-    obj[key]++;
-    return obj;
-  }, {});
-  objKeys = Object.keys(arrayObjects);
-  return objKeys;
+  }
+  return uniqueArray;
 }
 
 console.log(uniqueStringItems(someString));
