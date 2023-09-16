@@ -350,15 +350,15 @@ function shuffleMe(theArray) {
 // console.log(shuffleMe(theArray));
 
 // //CHECKING FOR PROBABILITY
-let arrayInstances = shuffleMe(theArray).reduce((obj, item) => {
-  if (!obj[item]) {
-    obj[item] = 0;
-  }
-  obj[item]++;
-  return obj;
-}, {});
+// let arrayInstances = shuffleMe(theArray).reduce((obj, item) => {
+//   if (!obj[item]) {
+//     obj[item] = 0;
+//   }
+//   obj[item]++;
+//   return obj;
+// }, {});
 
-console.log(arrayInstances);
+// console.log(arrayInstances);
 
 // //GET AVERGAE AGE FROM ARRAY OF OBJECTS
 // function getAverageAge(array) {
@@ -401,3 +401,19 @@ function uniqueStringItems(arr) {
 }
 
 console.log(uniqueStringItems(someString));
+
+//Create keys objects from array
+let arrayOfUsers = [
+  { id: "john", name: "john smith", age: 24 },
+  { id: "Ann", name: "Ann smith", age: 20 },
+  { id: "pete", name: "pete smith", age: 34 },
+];
+
+function groupById(arr) {
+  arrayObject = arr.reduce((obj, key) => {
+    obj[key.id] = key;
+    return obj;
+  }, {});
+  return arrayObject;
+}
+console.log(groupById(arrayOfUsers));
