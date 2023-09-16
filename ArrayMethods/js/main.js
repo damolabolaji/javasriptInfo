@@ -386,7 +386,8 @@ function uniqueStringItems(arr) {
     obj[key]++;
     return obj;
   }, {});
-  return arrayObjects;
+  objKeys = Object.keys(arrayObjects);
+  return objKeys;
 }
 
 console.log(uniqueStringItems(someString));
