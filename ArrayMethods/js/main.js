@@ -20,7 +20,7 @@
 //splice() removes, replaces and inserts.
 //returns removed elements as an array
 // let theArr = ["where", "is", "my", "train"];
-// let splicedReplaced = theArr.splice(0, 2, "this"); //removes one element starting from index 0 and replaces it with 'this'
+// let splicedReplaced = theArr.splice(0, 2, "this"); //removes two element starting from index 0 and replaces it with 'this'
 // console.log(splicedReplaced); //['where']
 // console.log(theArr);
 // let spliced = theArr.splice(0, 1); //starting from index 0, removes 1 element
@@ -369,3 +369,24 @@ console.log(arrayInstances);
 // console.log(getAverageAge(users));
 
 //CREATE ARRAY FROM UNIQUE ELEMENTS
+let someString = [
+  "hare",
+  "krishna",
+  "hare",
+  "krishna",
+  "hare",
+  "krishna",
+  "12:l0",
+];
+function uniqueStringItems(arr) {
+  arrayObjects = arr.reduce((obj, key) => {
+    if (!obj[key]) {
+      obj[key] = 0;
+    }
+    obj[key]++;
+    return obj;
+  }, {});
+  return arrayObjects;
+}
+
+console.log(uniqueStringItems(someString));
